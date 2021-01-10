@@ -48,10 +48,10 @@ RUN dpkg --add-architecture i386 && \
     /root/winetricks.sh && \
     rm -f /root/winetricks.sh && \
     DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --allow-downgrades --install-recommends \
-      wine-staging-i386=6.0-rc6 \
-      wine-staging-amd64=6.0-rc6 \
-      wine-staging=6.0-rc6 \
-      winehq-staging=6.0-rc6 && \
+      wine-staging-i386=5.22~buster \
+      wine-staging-amd64=5.22~buster \
+      wine-staging=5.22~buster \
+      winehq-staging=5.22~buster && \
     /usr/local/bin/winetricks --force -q dotnet48 && \
     DEBIAN_FRONTEND=noninteractive apt-get remove -qq -y \
       gnupg \
