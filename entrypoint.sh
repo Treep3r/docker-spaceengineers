@@ -20,6 +20,6 @@ sed -i "s=<LoadWorld>.*</LoadWorld>=<LoadWorld>${SAVE_PATH}</LoadWorld>=g" ${CON
 ## END UPDATES ##
 
 cd ${GAME_DIR}/DedicatedServer64/
-wine SpaceEngineersDedicated.exe -console -noconsole -ignorelastsession -path Z:\\appdata\\space-engineers\\instances\\${INSTANCE_NAME}
+wine SpaceEngineersDedicated.exe -noconsole -ignorelastsession -path Z:\\appdata\\space-engineers\\instances\\${INSTANCE_NAME}
 echo "--------------------------------END-------------------------------"
 sleep 10
