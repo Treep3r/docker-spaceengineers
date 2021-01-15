@@ -37,7 +37,7 @@ RUN dpkg --add-architecture i386 && \
       libfaudio0:i386 \
       libfaudio0 && \
     DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --install-recommends \
-      winehq-staging \
+      winehq-devel \
       steamcmd \
       xvfb \
       cabextract && \
