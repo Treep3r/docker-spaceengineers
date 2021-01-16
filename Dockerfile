@@ -60,3 +60,5 @@ RUN dpkg --add-architecture i386 && \
     DEBIAN_FRONTEND=noninteractive apt-get autoremove -qq -y && \
     DEBIAN_FRONTEND=noninteractive apt-get -qq clean autoclean && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+ENTRYPOINT /root/entrypoint.sh
