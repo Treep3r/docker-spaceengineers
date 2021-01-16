@@ -37,7 +37,7 @@ RUN dpkg --add-architecture i386 && \
       libfaudio0:i386 \
       libfaudio0 && \
     DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --install-recommends \
-      winehq-devel \
+      winehq-staging \
       steamcmd \
       xvfb \
       cabextract && \
@@ -47,6 +47,11 @@ RUN dpkg --add-architecture i386 && \
     env WINEDLLOVERRIDES="mscoree=d" wineboot --init /nogui && \
     /root/winetricks.sh && \
     rm -f /root/winetricks.sh && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --allow-downgrades --install-recommends \
+      wine-staging-i386=6.0.0~buster-1 \
+      wine-staging-amd64=6.0.0~buster-1 \
+      wine-staging=6.0.0~buster-1  \
+      winehq-staging=6.0.0~buster-1  && \
     /usr/local/bin/winetricks --force -q dotnet48 && \
     DEBIAN_FRONTEND=noninteractive apt-get remove -qq -y \
       gnupg \
@@ -55,5 +60,3 @@ RUN dpkg --add-architecture i386 && \
     DEBIAN_FRONTEND=noninteractive apt-get autoremove -qq -y && \
     DEBIAN_FRONTEND=noninteractive apt-get -qq clean autoclean && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
-
-ENTRYPOINT /root/entrypoint.sh
