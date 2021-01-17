@@ -6,7 +6,7 @@ COPY winetricks.sh entrypoint.sh /root/
 
 ENV WINEARCH=win64
 ENV WINEDEBUG=-all
-ENV WINEPREFIX=/root/server
+ENV WINEPREFIX=/root/server winetricks --force -q dotnet48 vcrun2015 faudio d3dcompiler_47
 ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 
 # Add i386 architecture support
