@@ -55,7 +55,6 @@ RUN dpkg --add-architecture i386 && \
     /usr/local/bin/winetricks --force -q dotnet48 && \
     DEBIAN_FRONTEND=noninteractive apt-get remove -qq -y \
       gnupg \
-      wget \
       software-properties-common && \
     DEBIAN_FRONTEND=noninteractive apt-get autoremove -qq -y && \
     DEBIAN_FRONTEND=noninteractive apt-get -qq clean autoclean && \
