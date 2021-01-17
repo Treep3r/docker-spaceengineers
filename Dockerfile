@@ -59,7 +59,7 @@ RUN dpkg --add-architecture i386 && \
     DEBIAN_FRONTEND=noninteractive apt-get autoremove -qq -y && \
     DEBIAN_FRONTEND=noninteractive apt-get -qq clean autoclean && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/ && \
-    mkdir /appdata/space-engineers && \
+    mkdir -p /appdata/space-engineers && \
     WINEPREFIX=/appdata/space-engineers/pfx winetricks --force -q dotnet48 vcrun2015 faudio d3dcompiler_47
 
 ENTRYPOINT /root/entrypoint.sh
