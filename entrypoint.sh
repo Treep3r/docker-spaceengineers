@@ -19,7 +19,6 @@ sed -i "s=<LoadWorld>.*</LoadWorld>=<LoadWorld>${SAVE_PATH}</LoadWorld>=g" ${CON
 
 ## END UPDATES ##
 
-WINEPREFIX=/appdata/space-engineers/pfx winetricks --force dotnet48 vcrun2015 faudio d3dcompiler_47
 cd ${GAME_DIR}/DedicatedServer64/
 wine SpaceEngineersDedicated.exe -noconsole -ignorelastsession -path Z:\\appdata\\space-engineers\\instances\\${INSTANCE_NAME}
 echo "--------------------------------END-------------------------------"
